@@ -39,15 +39,13 @@ Redshift: For Redshift I used 2 Node cluster with Instance Types `dc2.large`
 
 ### Setting Up Airflow
 
-I have written detailed instruction on how to setup Airflow using AWS CloudFormation script.  Check out - [Airflow using AWS CloudFormation](https://github.com/san089/Data_Engineering_Projects/blob/master/Airflow_Livy_Setup_CloudFormation.md)
-
 **NOTE: This setup uses EC2 instance and a Postgres RDS instance. Make sure to check out charges before running the CloudFromation Stack.** 
 
 Project uses `sshtunnel` to submit spark jobs using a ssh connection from the EC2 instance. This setup does not automatically install `sshtunnel` for apache airflow. You can install by running below command: 
 
     pip install apache-airflow[sshtunnel]
 
-Finally, copy the dag and plugin folder to EC2 inside airflow home directory. Also, checkout [Airflow Connection](https://github.com/san089/goodreads_etl_pipeline/blob/master/docs/Airflow_Connections.md) for setting up connection to EMR and Redshift from Airflow.
+Finally, copy the dag and plugin folder to EC2 inside airflow home directory
 
 ### Setting up EMR
 Spinning up EMR cluster is pretty straight forward. You can use AWS Guide available [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-gs.html).
@@ -74,7 +72,7 @@ Finally,  pyspark uses python2 as default setup on EMR. To change to python3, se
 Copy the ETL scripts to EMR and we have our EMR ready to run jobs. 
 
 ### Setting up Redshift
-You can follow the AWS [ Guide](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-launch-sample-cluster.html) to run a Redshift cluster or alternatively you can use [Redshift_Cluster_IaC.py](https://github.com/san089/Data_Engineering_Projects/blob/master/Redshift_Cluster_IaC.py) Script to create cluster automatically. 
+You can follow the AWS [ Guide](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-launch-sample-cluster.html) to run a Redshift cluster
 
 
 ## How to run 
