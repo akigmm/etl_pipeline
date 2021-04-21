@@ -7,7 +7,7 @@
 
 Pipeline Consists of various modules:
 
- - [GoodReads Python Wrapper](https://github.com/san089/goodreads)
+ - [GoodReads Python Wrapper]https://github.com/akigmm/goodreads_python_wrapper
  - ETL Jobs
  - Redshift Warehouse Module
  - Analytics Module 
